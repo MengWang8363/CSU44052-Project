@@ -803,42 +803,44 @@ struct Ground {
 
 struct UFO {
 
+	float rotationAngle = 0.0f;
+
 	GLfloat vertex_buffer_data[72] = {
 		// Front face
-		1500.0f, 900.0f,  200.0f,  // Bottom-left
-		1900.0f, 900.0f,  200.0f,  // Bottom-right
-		1900.0f, 1300.0f, 200.0f,  // Top-right
-		1500.0f, 1300.0f, 200.0f,  // Top-left
+		2000.0f, 1400.0f,  200.0f,  // Bottom-left
+		2400.0f, 1400.0f,  200.0f,  // Bottom-right
+		2400.0f, 1800.0f, 200.0f,  // Top-right
+		2000.0f, 1800.0f, 200.0f,  // Top-left
 
 		// Back face
-		1500.0f, 900.0f, -200.0f,  // Bottom-left
-		1900.0f, 900.0f, -200.0f,  // Bottom-right
-		1900.0f, 1300.0f, -200.0f, // Top-right
-		1500.0f, 1300.0f, -200.0f, // Top-left
+		2000.0f, 1400.0f, -200.0f,  // Bottom-left
+		2400.0f, 1400.0f, -200.0f,  // Bottom-right
+		2400.0f, 1800.0f, -200.0f, // Top-right
+		2000.0f, 1800.0f, -200.0f, // Top-left
 
 		// Left face
-		1500.0f, 900.0f, -200.0f,  // Bottom-left
-		1500.0f, 900.0f,  200.0f,  // Bottom-right
-		1500.0f, 1300.0f, 200.0f,  // Top-right
-		1500.0f, 1300.0f, -200.0f, // Top-left
+		2000.0f, 1400.0f, -200.0f,  // Bottom-left
+		2000.0f, 1400.0f,  200.0f,  // Bottom-right
+		2000.0f, 1800.0f, 200.0f,  // Top-right
+		2000.0f, 1800.0f, -200.0f, // Top-left
 
 		// Right face
-		1900.0f, 900.0f, -200.0f,  // Bottom-left
-		1900.0f, 900.0f,  200.0f,  // Bottom-right
-		1900.0f, 1300.0f, 200.0f,  // Top-right
-		1900.0f, 1300.0f, -200.0f, // Top-left
+		2400.0f, 1400.0f, -200.0f,  // Bottom-left
+		2400.0f, 1400.0f,  200.0f,  // Bottom-right
+		2400.0f, 1800.0f, 200.0f,  // Top-right
+		2400.0f, 1800.0f, -200.0f, // Top-left
 
 		// Top face
-		1500.0f, 1300.0f, 200.0f,  // Bottom-left
-		1900.0f, 1300.0f, 200.0f,  // Bottom-right
-		1900.0f, 1300.0f, -200.0f, // Top-right
-		1500.0f, 1300.0f, -200.0f, // Top-left
+		2000.0f, 1800.0f, 200.0f,  // Bottom-left
+		2400.0f, 1800.0f, 200.0f,  // Bottom-right
+		2400.0f, 1800.0f, -200.0f, // Top-right
+		2000.0f, 1800.0f, -200.0f, // Top-left
 
 		// Bottom face
-		1500.0f, 900.0f, 200.0f,   // Bottom-left
-		1900.0f, 900.0f, 200.0f,   // Bottom-right
-		1900.0f, 900.0f, -200.0f,  // Top-right
-		1500.0f, 900.0f, -200.0f   // Top-left
+		2000.0f, 1400.0f, 200.0f,   // Bottom-left
+		2400.0f, 1400.0f, 200.0f,   // Bottom-right
+		2400.0f, 1400.0f, -200.0f,  // Top-right
+		2000.0f, 1400.0f, -200.0f   // Top-left
 	};
 	
 	GLfloat normal_buffer_data[72] = {    
@@ -1044,7 +1046,7 @@ struct UFO {
 		lightSpaceMatrixID = glGetUniformLocation(programID, "lightSpaceMatrix");
 	}
 
-	void render(glm::mat4 cameraMatrix, glm::mat4 lightSpaceMatrix) {
+	void render(glm::mat4 vpMatrix, glm::mat4 lightSpaceMatrix) {
 		glUseProgram(programID);
 
 		glEnableVertexAttribArray(0);
@@ -1062,7 +1064,9 @@ struct UFO {
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
 
 		// Set model-view-projection matrix
-		glm::mat4 mvp = cameraMatrix;
+		
+        glm::mat4 modelMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
+        glm::mat4 mvp = vpMatrix * modelMatrix;
 		glUniformMatrix4fv(mvpMatrixID, 1, GL_FALSE, &mvp[0][0]);
 
 		glEnableVertexAttribArray(3);
@@ -1304,6 +1308,10 @@ int main(void)
 
 		// RenderGLTFModel(meshes,vp);
 		b.render(vp, lightSpaceMatrix);
+
+		// Increment the UFO's rotation angle
+    	u.rotationAngle += 0.12f; // Adjust speed as needed
+    	if (u.rotationAngle >= 360.0f) u.rotationAngle -= 360.0f;
 		u.render(vp, lightSpaceMatrix);
 
 		if (saveDepth) {
