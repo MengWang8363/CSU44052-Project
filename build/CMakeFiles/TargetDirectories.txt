@@ -1,0 +1,13 @@
+/Users/selinawang/Downloads/Graphics Final Project/build/CMakeFiles/final_project.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/CMakeFiles/edit_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/CMakeFiles/rebuild_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/CMakeFiles/edit_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/CMakeFiles/rebuild_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glad-3.3/CMakeFiles/glad.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glad-3.3/CMakeFiles/edit_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glad-3.3/CMakeFiles/rebuild_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glfw-3.1.2/CMakeFiles/edit_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glfw-3.1.2/CMakeFiles/rebuild_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glfw-3.1.2/src/CMakeFiles/edit_cache.dir
+/Users/selinawang/Downloads/Graphics Final Project/build/external/glfw-3.1.2/src/CMakeFiles/rebuild_cache.dir
