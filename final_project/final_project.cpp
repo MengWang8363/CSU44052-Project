@@ -128,7 +128,7 @@ struct GLTFMesh {
 
 struct Ground {
 
-	GLfloat vertex_buffer_data[192] = {
+	GLfloat vertex_buffer_data[264] = {
 		// Ground and Background
 	    -3500.0f, 0.0f, -3500.0f,  // Bottom-left
 		3500.0f, 0.0f, -3500.0f,   // Bottom-right
@@ -167,34 +167,34 @@ struct Ground {
 
 		// Building 1
 		// Top face
-		-500.0f, 1600.0f, -500.0f,  // Bottom-left
-		-500.0f, 1600.0f,  500.0f,  // Top-left
-		500.0f, 1600.0f,  500.0f,  // Top-right
-		500.0f, 1600.0f, -500.0f,  // Bottom-right
+		-200.0f, 1600.0f, -500.0f,  // Bottom-left
+		-200.0f, 1600.0f,  500.0f,  // Top-left
+		800.0f, 1600.0f,  500.0f,  // Top-right
+		800.0f, 1600.0f, -500.0f,  // Bottom-right
 
 		// Front face
-		-500.0f, 0.0f,  500.0f,  // Bottom-left
-		-500.0f, 1600.0f,  500.0f,  // Top-left
-		500.0f, 1600.0f,  500.0f,  // Top-right
-		500.0f, 0.0f,  500.0f,  // Bottom-right
+		-200.0f, 0.0f,  500.0f,  // Bottom-left
+		-200.0f, 1600.0f,  500.0f,  // Top-left
+		800.0f, 1600.0f,  500.0f,  // Top-right
+		800.0f, 0.0f,  500.0f,  // Bottom-right
 
 		// Back face
-		-500.0f, 0.0f, -500.0f,  // Bottom-left
-		-500.0f, 1600.0f, -500.0f,  // Top-left
-		500.0f, 1600.0f, -500.0f,  // Top-right
-		500.0f, 0.0f, -500.0f,  // Bottom-right
+		-200.0f, 0.0f, -500.0f,  // Bottom-left
+		-200.0f, 1600.0f, -500.0f,  // Top-left
+		800.0f, 1600.0f, -500.0f,  // Top-right
+		800.0f, 0.0f, -500.0f,  // Bottom-right
 
 		// Left face
-		-500.0f, 0.0f, -500.0f,  // Bottom-left
-		-500.0f, 1600.0f, -500.0f,  // Top-left
-		-500.0f, 1600.0f,  500.0f,  // Top-right
-		-500.0f, 0.0f,  500.0f,  // Bottom-right
+		-200.0f, 0.0f, -500.0f,  // Bottom-left
+		-200.0f, 1600.0f, -500.0f,  // Top-left
+		-200.0f, 1600.0f,  500.0f,  // Top-right
+		-200.0f, 0.0f,  500.0f,  // Bottom-right
 
 		// Right face
-		500.0f, 0.0f, -500.0f,  // Bottom-left
-		500.0f, 1600.0f, -500.0f,  // Top-left
-		500.0f, 1600.0f,  500.0f,  // Top-right
-		500.0f, 0.0f,  500.0f,  // Bottom-right
+		800.0f, 0.0f, -500.0f,  // Bottom-left
+		800.0f, 1600.0f, -500.0f,  // Top-left
+		800.0f, 1600.0f,  500.0f,  // Top-right
+		800.0f, 0.0f,  500.0f,  // Bottom-right
 
 		// Building 2
 		// Top face
@@ -226,9 +226,10 @@ struct Ground {
 		-1200.0f + 350.0f, 1900.0f, -350.0f,  // Top-left
 		-1200.0f + 350.0f, 1900.0f,  350.0f,  // Top-right
 		-1200.0f + 350.0f, 0.0f,  350.0f,  // Bottom-right
+		
 	};
 	
-	GLfloat normal_buffer_data[192] = {
+	GLfloat normal_buffer_data[264] = {
 		// Ground and background
 		// Floor 
 		0.0, 1.0, 0.0,   
@@ -327,9 +328,10 @@ struct Ground {
 		-1.0f, 0.0f, 0.0f,   // Top-left
 		-1.0f, 0.0f, 0.0f,   // Top-right
 		-1.0f, 0.0f, 0.0f,   // Bottom-right
+
 	};
 
-	GLfloat color_buffer_data[192] = {
+	GLfloat color_buffer_data[264] = {
 		1.0f, 1.0f, 1.0f,
 		1.0f, 1.0f, 1.0f,
 		1.0f, 1.0f, 1.0f,
@@ -409,6 +411,7 @@ struct Ground {
 		1.0f, 1.0f, 1.0f,
 		1.0f, 1.0f, 1.0f,
 		1.0f, 1.0f, 1.0f,
+
 	};
 
 	GLuint index_buffer_data[96] = {
@@ -797,6 +800,314 @@ struct Ground {
 	}
 }; 
 
+
+struct UFO {
+
+	GLfloat vertex_buffer_data[72] = {
+		// Front face
+		1500.0f, 900.0f,  200.0f,  // Bottom-left
+		1900.0f, 900.0f,  200.0f,  // Bottom-right
+		1900.0f, 1300.0f, 200.0f,  // Top-right
+		1500.0f, 1300.0f, 200.0f,  // Top-left
+
+		// Back face
+		1500.0f, 900.0f, -200.0f,  // Bottom-left
+		1900.0f, 900.0f, -200.0f,  // Bottom-right
+		1900.0f, 1300.0f, -200.0f, // Top-right
+		1500.0f, 1300.0f, -200.0f, // Top-left
+
+		// Left face
+		1500.0f, 900.0f, -200.0f,  // Bottom-left
+		1500.0f, 900.0f,  200.0f,  // Bottom-right
+		1500.0f, 1300.0f, 200.0f,  // Top-right
+		1500.0f, 1300.0f, -200.0f, // Top-left
+
+		// Right face
+		1900.0f, 900.0f, -200.0f,  // Bottom-left
+		1900.0f, 900.0f,  200.0f,  // Bottom-right
+		1900.0f, 1300.0f, 200.0f,  // Top-right
+		1900.0f, 1300.0f, -200.0f, // Top-left
+
+		// Top face
+		1500.0f, 1300.0f, 200.0f,  // Bottom-left
+		1900.0f, 1300.0f, 200.0f,  // Bottom-right
+		1900.0f, 1300.0f, -200.0f, // Top-right
+		1500.0f, 1300.0f, -200.0f, // Top-left
+
+		// Bottom face
+		1500.0f, 900.0f, 200.0f,   // Bottom-left
+		1900.0f, 900.0f, 200.0f,   // Bottom-right
+		1900.0f, 900.0f, -200.0f,  // Top-right
+		1500.0f, 900.0f, -200.0f   // Top-left
+	};
+	
+	GLfloat normal_buffer_data[72] = {    
+		// Front face (facing +Z)
+		0.0f, 0.0f,  -1.0f,  // Bottom-left
+		0.0f, 0.0f,  -1.0f,  // Bottom-right
+		0.0f, 0.0f,  -1.0f,  // Top-right
+		0.0f, 0.0f,  -1.0f,  // Top-left
+
+		// Back face (facing -Z)
+		0.0f, 0.0f, -1.0f,  // Bottom-left
+		0.0f, 0.0f, -1.0f,  // Bottom-right
+		0.0f, 0.0f, -1.0f,  // Top-right
+		0.0f, 0.0f, -1.0f,  // Top-left
+
+		// Left face (facing -X)
+		-1.0f, 0.0f, 0.0f,  // Bottom-left
+		-1.0f, 0.0f, 0.0f,  // Bottom-right
+		-1.0f, 0.0f, 0.0f,  // Top-right
+		-1.0f, 0.0f, 0.0f,  // Top-left
+
+		// Right face (facing +X)
+		-1.0f, 0.0f, 0.0f,   // Bottom-left
+		-1.0f, 0.0f, 0.0f,   // Bottom-right
+		-1.0f, 0.0f, 0.0f,   // Top-right
+		-1.0f, 0.0f, 0.0f,   // Top-left
+
+		// Top face (facing +Y)
+		0.0f, -1.0f, 0.0f,   // Bottom-left
+		0.0f, -1.0f, 0.0f,   // Bottom-right
+		0.0f, -1.0f, 0.0f,   // Top-right
+		0.0f, -1.0f, 0.0f,   // Top-left
+
+		// Bottom face (facing -Y)
+		0.0f, 1.0f, 0.0f,  // Bottom-left
+		0.0f, 1.0f, 0.0f,  // Bottom-right
+		0.0f, 1.0f, 0.0f,  // Top-right
+		0.0f, 1.0f, 0.0f   // Top-left
+	};
+
+	GLfloat color_buffer_data[72] = {
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f,
+		1.0f, 1.0f, 1.0f
+	};
+
+	GLuint index_buffer_data[96] = {
+		// Front face (+Z)
+		0, 1, 2,  // First triangle
+		0, 2, 3,  // Second triangle
+
+		// Back face (-Z)
+		6, 5, 4,  // First triangle
+		7, 6, 4,  // Second triangle y
+
+		// Left face (-X)
+		8, 9, 10,  // First triangle
+		8, 10, 11, // Second triangle y
+
+		// Right face (+X)
+		14, 13, 12, // First triangle
+		15, 14, 12, // Second triangle
+
+		// Top face (+Y)
+		16, 17, 18, // First triangle
+		16, 18, 19, // Second triangle
+
+		// Bottom face (-Y)
+		22, 21, 20, // First triangle
+		23, 22, 20  // Second triangle
+	};
+
+	GLfloat uv_buffer_data[128] = {
+		// Front face (+Z)
+		0.0f, 0.0f,  // Bottom-left
+		1.0f, 0.0f,  // Bottom-right
+		1.0f, 1.0f,  // Top-right
+		0.0f, 1.0f,  // Top-left
+
+		// Back face (-Z)
+		0.0f, 0.0f,  // Bottom-left
+		1.0f, 0.0f,  // Bottom-right
+		1.0f, 1.0f,  // Top-right
+		0.0f, 1.0f,  // Top-left
+
+		// Left face (-X)
+		0.0f, 0.0f,  // Bottom-left
+		1.0f, 0.0f,  // Bottom-right
+		1.0f, 1.0f,  // Top-right
+		0.0f, 1.0f,  // Top-left
+
+		// Right face (+X)
+		0.0f, 0.0f,  // Bottom-left
+		1.0f, 0.0f,  // Bottom-right
+		1.0f, 1.0f,  // Top-right
+		0.0f, 1.0f,  // Top-left
+
+		// Top face (+Y)
+		0.0f, 0.0f,  // Bottom-left
+		0.1f, 0.0f,  // Bottom-right
+		0.1f, 0.1f,  // Top-right
+		0.0f, 0.1f,  // Top-left
+
+		// Bottom face (-Y)
+		0.0f, 0.0f,  // Bottom-left
+		0.1f, 0.0f,  // Bottom-right
+		0.1f, 0.1f,  // Top-right
+		0.0f, 0.1f   // Top-left
+	};
+
+	// OpenGL buffers
+	GLuint vertexArrayID; 
+	GLuint vertexBufferID; 
+	GLuint indexBufferID; 
+	GLuint colorBufferID;
+	GLuint normalBufferID;
+	GLuint uvBufferID;
+	GLuint textureID;
+
+	// Shader variable IDs
+	GLuint mvpMatrixID;
+	GLuint textureSamplerID;
+	GLuint lightPositionID;
+	GLuint lightIntensityID;
+	GLuint programID;
+
+	GLuint lightSpaceMatrixID;
+
+	void initialize() {
+		for (int i = 0; i < 72; ++i) color_buffer_data[i] = 1.0f;
+		// Create a vertex array object
+		glGenVertexArrays(1, &vertexArrayID);
+		glBindVertexArray(vertexArrayID);
+
+		// Create a vertex buffer object to store the vertex data		
+		glGenBuffers(1, &vertexBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertex_buffer_data), vertex_buffer_data, GL_STATIC_DRAW);
+
+		// Create a vertex buffer object to store the color data
+		glGenBuffers(1, &colorBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(color_buffer_data), color_buffer_data, GL_STATIC_DRAW);
+
+		// Create a vertex buffer object to store the vertex normals		
+		glGenBuffers(1, &normalBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, normalBufferID);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(normal_buffer_data), normal_buffer_data, GL_STATIC_DRAW);
+
+		// Create a vertex buffer object to store the UV data
+		glGenBuffers(1, &uvBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, uvBufferID);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(uv_buffer_data), uv_buffer_data,
+		GL_STATIC_DRAW);
+		
+		// Create an index buffer object to store the index data that defines triangle faces
+		glGenBuffers(1, &indexBufferID);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(index_buffer_data), index_buffer_data, GL_STATIC_DRAW);
+
+		// Create and compile our GLSL program from the shaders
+		programID = LoadShadersFromFile("/Users/selinawang/Downloads/Graphics Final Project/final_project/scene.vert", "/Users/selinawang/Downloads/Graphics Final Project/final_project/scene.frag");
+		if (programID == 0)
+		{
+			std::cerr << "Failed to load shaders." << std::endl;
+		}
+
+		std::string texturePath = "/Users/selinawang/Downloads/Graphics Final Project/final_project/texture/UFO.png";
+		textureID = LoadTextureTileBox(texturePath.c_str());
+
+		textureSamplerID = glGetUniformLocation(programID,"textureSampler");
+
+		// Get a handle for our "MVP" uniform
+		mvpMatrixID = glGetUniformLocation(programID, "MVP");
+		lightPositionID = glGetUniformLocation(programID, "lightPosition");
+		lightIntensityID = glGetUniformLocation(programID, "lightIntensity");
+		lightSpaceMatrixID = glGetUniformLocation(programID, "lightSpaceMatrix");
+	}
+
+	void render(glm::mat4 cameraMatrix, glm::mat4 lightSpaceMatrix) {
+		glUseProgram(programID);
+
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+
+		glEnableVertexAttribArray(1);
+		glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
+
+		glEnableVertexAttribArray(2);
+		glBindBuffer(GL_ARRAY_BUFFER, normalBufferID);
+		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
+
+		// Set model-view-projection matrix
+		glm::mat4 mvp = cameraMatrix;
+		glUniformMatrix4fv(mvpMatrixID, 1, GL_FALSE, &mvp[0][0]);
+
+		glEnableVertexAttribArray(3);
+		glBindBuffer(GL_ARRAY_BUFFER, uvBufferID);
+		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+		// Set light data 
+		glUniform3fv(lightPositionID, 1, &lightPosition[0]);
+		glUniform3fv(lightIntensityID, 1, &lightIntensity[0]);
+
+		// Pass light-space matrix to shader
+		glUniformMatrix4fv(lightSpaceMatrixID, 1, GL_FALSE, &lightSpaceMatrix[0][0]);
+
+		// Set light data
+		glUniform3fv(lightPositionID, 1, &lightPosition[0]);
+		glUniform3fv(lightIntensityID, 1, &lightIntensity[0]);
+		
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, textureID);
+		glUniform1i(textureSamplerID, 0); 
+		glDrawElements(
+			GL_TRIANGLES,      // mode
+			36,    			   // number of indices
+			GL_UNSIGNED_INT,   // type
+			(void*)(0 * sizeof(GLuint))  // element array buffer offset
+		);
+
+		glDisableVertexAttribArray(0);
+		glDisableVertexAttribArray(1);
+		glDisableVertexAttribArray(2);
+		glDisableVertexAttribArray(3);
+	}
+
+	void cleanup() {
+		glDeleteBuffers(1, &vertexBufferID);
+		glDeleteBuffers(1, &colorBufferID);
+		glDeleteBuffers(1, &indexBufferID);
+		glDeleteBuffers(1, &normalBufferID);
+		glDeleteVertexArrays(1, &vertexArrayID);
+		glDeleteBuffers(1, &uvBufferID);
+		glDeleteTextures(1, &textureID);
+		glDeleteProgram(programID);
+	}
+}; 
+
 /*
 // Function to load a GLTF model
 std::vector<GLTFMesh> LoadGLTFModel(const std::string &path) {
@@ -952,6 +1263,9 @@ int main(void)
 	Ground b;
 	b.initialize();
 
+	UFO u;
+	u.initialize();
+
 	/*
 	// Load the GLTF model
     std::string gltfFilePath = "/Users/selinawang/Downloads/glTF test/final_project/model/Robot_dog.gltf";
@@ -990,6 +1304,7 @@ int main(void)
 
 		// RenderGLTFModel(meshes,vp);
 		b.render(vp, lightSpaceMatrix);
+		u.render(vp, lightSpaceMatrix);
 
 		if (saveDepth) {
             std::string filename = "depth_camera.png";
@@ -1007,6 +1322,7 @@ int main(void)
 
 	// Clean up
 	b.cleanup();
+	u.cleanup();
 
 	// Close OpenGL window and terminate GLFW
 	glfwTerminate();
